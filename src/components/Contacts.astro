@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 const socials = [
-  { title: 'instagram', link: '#', label: 'aaavlasova' },
-  { title: 'tg', link: '#', label: 'aaavlasova' },
+  { title: 'instagram', link: 'https://www.instagram.com/aaavlasova/', label: 'aaavlasova' },
+  { title: 'tg', link: 'https://t.me/aaavlasova', label: 'aaavlasova' },
 ];
 ---
 
@@ -14,7 +14,7 @@ const socials = [
     <div class="flex items-center gap-5">
       {
         socials.map((social) => (
-          <a href={social.link} class="flex items-center gap-2 text-lg">
+          <a href={social.link} target="_blank" class="flex items-center gap-2 text-lg">
             <Icon name={social.title} size={26} />
             {social.label}
           </a>
