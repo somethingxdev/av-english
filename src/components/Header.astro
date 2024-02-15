@@ -1,0 +1,62 @@
+---
+import { Astronav, MenuIcon, MenuItems, StickyHeader } from 'astro-navbar';
+import { Image } from 'astro:assets';
+const menuLinks = [
+  { label: 'О себе', href: '#about' },
+  { label: 'Занятия', href: '#lessons' },
+  { label: 'Опыт', href: '#educations' },
+  { label: 'Тарифы', href: '#pricing' },
+];
+---
+
+<StickyHeader class="sticky top-0 bg-white z-30 transition-all w-full py-1 sm:py-3" defaultClass="shadow-none" activeClass="shadow-lg">
+  <div class="container">
+    <Astronav closeOnClick>
+      <div class="flex justify-between items-center w-full">
+        <Image src={import('../assets/logo.svg')} alt="logo" class="size-14 sm:size-16 lg:size-20 z-20" />
+        <div
+          class="navbar fixed top-0 -left-full transition-all z-10 bg-white drop-shadow-md md:drop-shadow-none w-[200px] h-dvh md:relative md:left-0 md:w-auto md:flex md:h-auto">
+          <MenuItems class="hidden md:block">
+            <ul class="pt-32 px-5 justify-center flex-auto flex flex-col gap-5 md:gap-10 md:pt-0 md:flex-row">
+              {
+                menuLinks.map((item) => (
+                  <li class="text-xl md:text-lg transition-colors hover:text-gray-800">
+                    <a href={item.href}>{item.label}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </MenuItems>
+        </div>
+        <div class="flex items-center gap-3 z-20">
+          <a href="#contacts" class="font-semibold text-xl md:text-lg hover:text-gray-800">Контакты</a>
+          <MenuIcon class="size-7 md:hidden" />
+        </div>
+      </div>
+    </Astronav>
+  </div>
+</StickyHeader>
+
+<style is:global>
+  .navbar.open {
+    left: 0;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const astronavMenu = document.querySelector('#astronav-menu');
+    const navLinks = navbar.querySelectorAll('a');
+
+    astronavMenu.addEventListener('click', () => {
+      navbar.classList.toggle('open');
+    });
+
+    navLinks.forEach((link) =>
+      link.addEventListener('click', () => {
+        navbar.classList.remove('open');
+      }),
+    );
+  });
+</script>

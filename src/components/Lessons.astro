@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import { Markdown } from '@astropub/md';
+const { body } = await getEntry('lessons', 'lessons');
+---
+
+<section class="container py-10 md:py-20 scroll-mt-10" id="lessons">
+  <h2 class="section-title mb-5 md:mb-10">О занятиях</h2>
+  <div class="flex flex-col lg:flex-row gap-5">
+    <Image src={import('../assets/lessons.png')} quality={100} alt="О Занятиях" class="mb-5 sm:max-w-[480px] object-cover" />
+    <div class="markdown *:mb-3">
+      <Markdown of={body} />
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .markdown p:last-child {
+    border-top: 1px solid #2a343e;
+    padding-top: 25px;
+  }
+</style>

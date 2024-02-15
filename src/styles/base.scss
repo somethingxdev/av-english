@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply bg-primary hover:bg-primary/80 transition-colors font-medium text-white  py-3 px-7 flex items-center justify-center;
+  }
+  .flex-stack {
+    @apply flex items-center justify-between;
+  }
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl relative pt-3 font-heading uppercase after:content-[''] after:absolute after:top-0 after:left-0 after:h-[5px] after:w-[50px] after:bg-black;
+  }
+}

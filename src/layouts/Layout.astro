@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+}
+
+import '@fontsource/playfair-display';
+import '@fontsource/open-sans/300.css';
+import '@fontsource/open-sans/400.css';
+import '@fontsource/open-sans/500.css';
+import '@fontsource/open-sans/600.css';
+import '@fontsource/open-sans/700.css';
+import '../styles/base.scss';
+import Header from '../components/Header.astro';
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white font-sans text-primary overflow-x-hidden relative">
+    <div class="wrapper min-h-screen flex flex-col">
+      <Header />
+      <main class="flex-auto">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

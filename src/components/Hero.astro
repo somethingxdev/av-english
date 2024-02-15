@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+const socials = [
+  { title: 'instagram', link: '#' },
+  { title: 'tg', link: '#' },
+];
+---
+
+<section class="container py-20">
+  <div class="flex flex-col md:flex-row justify-between gap-3">
+    <div class="flex flex-col items-start">
+      <h1
+        class="font-heading text-5xl md:text-6xl lg:text-8xl relative mb-2 sm:mb-5 after:content-[''] after:absolute after:-top-2 after:left-0 after:h-[5px] after:w-[150px] after:bg-black">
+        Anna Vlasova
+      </h1>
+      <p class="md:mb-5 lg:mb-10 text-xl md:text-2xl lg:text-3xl font-light">Online English Teacher</p>
+      <a href="#" class="button hidden md:block py-4 text-lg">Записаться на занятие</a>
+      <div class="mt-auto hidden md:block">
+        <span class="block mb-2 font-medium text-lg">Follow me</span>
+        <div class="flex items-center gap-3">
+          {
+            socials.map((social) => (
+              <a href={social.link}>
+                <Icon name={social.title} size={30} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="relative mb-5 md:mb-0">
+      <Image src={import('../assets/hero.png')} alt="Anna Vlasova" class="sm:max-w-[400px] lg:max-w-[550px]" />
+      <div class="absolute bottom-0 right-0 m-3 flex items-center gap-3 md:hidden">
+        {
+          socials.map((social) => (
+            <a href={social.link} class="text-white">
+              <Icon name={social.title} size={30} />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <a href="#contacts" class="button md:hidden">Записаться на занятие</a>
+</section>
