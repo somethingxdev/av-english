@@ -5,9 +5,10 @@ const socials = [
   { title: 'instagram', link: 'https://www.instagram.com/aaavlasova/' },
   { title: 'tg', link: 'https://t.me/aaavlasova' },
 ];
+import { Fade } from 'react-awesome-reveal';
 ---
 
-<section class="container py-20">
+<Fade client:load className="container py-20">
   <div class="flex flex-col md:flex-row justify-between gap-3">
     <div class="flex flex-col items-start">
       <h1
@@ -44,4 +45,4 @@ const socials = [
     </div>
   </div>
   <a href="#contacts" class="button md:hidden">Записаться на занятие</a>
-</section>
+</Fade>

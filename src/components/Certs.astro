@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 const certs = [
-  { url: import('../assets/certs/cert1.png') },
-  { url: import('../assets/certs/cert2.png') },
-  { url: import('../assets/certs/cert3.png') },
-  { url: import('../assets/certs/cert4.png') },
-  { url: import('../assets/certs/cert5.png') },
-  { url: import('../assets/certs/cert6.png') },
-  { url: import('../assets/certs/cert7.png') },
-  { url: import('../assets/certs/cert8.png') },
-  { url: import('../assets/certs/cert9.png') },
+  { url: import('../assets/certs/cert1.png'), alt: '' },
+  { url: import('../assets/certs/cert2.png'), alt: '' },
+  { url: import('../assets/certs/cert3.png'), alt: '' },
+  { url: import('../assets/certs/cert4.png'), alt: '' },
+  { url: import('../assets/certs/cert5.png'), alt: '' },
+  { url: import('../assets/certs/cert6.png'), alt: '' },
+  { url: import('../assets/certs/cert7.png'), alt: '' },
+  { url: import('../assets/certs/cert8.png'), alt: '' },
+  { url: import('../assets/certs/cert9.png'), alt: '' },
 ];
 ---
 
@@ -92,6 +92,7 @@ const certs = [
     speed: 500,
     download: false,
     share: false,
+    zoom: false,
     licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
   });
 </script>

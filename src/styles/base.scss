@@ -13,3 +13,7 @@
     @apply text-2xl sm:text-3xl md:text-4xl relative pt-3 font-heading uppercase after:content-[''] after:absolute after:top-0 after:left-0 after:h-[5px] after:w-[50px] after:bg-black;
   }
 }
+
+.lg-components {
+  display: none !important;
+}
