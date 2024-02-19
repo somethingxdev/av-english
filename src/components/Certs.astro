@@ -20,7 +20,7 @@ const certs = [
       <div class="embla__container" id="lightgallery">
         {
           certs.map((review, index) => (
-            <div class="embla__slide cursor-pointer bg-[#F4F8F9] p-2" data-src={`src/assets/certs/cert${index + 1}.png`}>
+            <div class="embla__slide cursor-pointer bg-[#F4F8F9] p-2" data-src={`/certs/cert${index + 1}.png`}>
               <Image src={review.url} alt="Отзыв" class="w-full h-full" quality={100} />
             </div>
           ))
