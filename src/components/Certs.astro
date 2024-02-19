@@ -17,11 +17,11 @@ const certs = [
   <h2 class="section-title text-center w-max sm:mx-auto mb-10">ДИПЛОМЫ И СЕРТИФИКАТЫ</h2>
   <div class="embla relative">
     <div class="embla__viewport">
-      <div class="embla__container">
+      <div class="embla__container" id="lightgallery">
         {
-          certs.map((review) => (
-            <div class="embla__slide bg-[#F4F8F9] p-2">
-              <Image src={review.url} alt="Отзыв" class="" quality={100} />
+          certs.map((review, index) => (
+            <div class="embla__slide cursor-pointer bg-[#F4F8F9] p-2" data-src={`src/assets/certs/cert${index + 1}.png`}>
+              <Image src={review.url} alt="Отзыв" class="w-full h-full" quality={100} />
             </div>
           ))
         }
@@ -83,4 +83,13 @@ const certs = [
 
 <script>
   import '../components/embla/index';
+  import lightGallery from 'lightgallery';
+  import lgZoom from 'lightgallery/plugins/zoom';
+  import '../../node_modules/lightgallery/css/lightgallery-bundle.css';
+
+  lightGallery(document.getElementById('lightgallery'), {
+    plugins: [lgZoom],
+    speed: 500,
+    licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+  });
 </script>

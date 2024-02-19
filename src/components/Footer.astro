@@ -1,0 +1,30 @@
+---
+const menuLinks = [
+  { label: 'О себе', href: '#about' },
+  { label: 'Занятия', href: '#lessons' },
+  { label: 'Опыт', href: '#educations' },
+  { label: 'Тарифы', href: '#pricing' },
+];
+---
+
+<div class="container py-10 flex flex-col sm:flex-row gap-5 items-center justify-between sm:gap-2">
+  <nav class="flex-auto">
+    <ul class="flex gap-5">
+      {
+        menuLinks.map((item) => (
+          <li>
+            <a class="text-lg transition-colors hover:text-gray-800" href={item.href}>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <p class="text-sm">Copyright © <span id="year"></span> AV. All rights reserved.</p>
+</div>
+
+<script>
+  let currentDate = new Date();
+  document.querySelector('#year').textContent = currentDate.getFullYear();
+</script>
