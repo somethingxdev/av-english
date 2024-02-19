@@ -86,10 +86,13 @@ const certs = [
   import lightGallery from 'lightgallery';
   import lgZoom from 'lightgallery/plugins/zoom';
   import '../../node_modules/lightgallery/css/lightgallery-bundle.css';
-
+  import '../../node_modules/lightgallery/css/lg-zoom.css';
   lightGallery(document.getElementById('lightgallery'), {
     plugins: [lgZoom],
     speed: 500,
+    download: false,
+    share: false,
+    zoom: false,
     licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
   });
 </script>
