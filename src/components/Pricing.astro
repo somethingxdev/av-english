@@ -23,10 +23,10 @@ const plans = [
 
 <section class="container py-10 md:py-20 scroll-mt-10" id="pricing">
   <h2 class="section-title mb-10 w-max mx-auto">Тарифы</h2>
-  <div class="flex flex-col md:flex-row gap-5">
+  <div class="flex flex-col  md:flex-row gap-5">
     {
       plans.map((plan, index) => (
-        <div class="mb-5  w-full border py-5 px-8">
+        <div class="mb-5 w-full border py-5 px-8 flex flex-col">
           <h3 class="text-center font-semibold mb-5 text-lg">{plan.title}</h3>
           <ul class="mb-5">
             <li class="flex-stack gap-5 border-b py-2 mb-3">
@@ -44,7 +44,7 @@ const plans = [
             </li>
             }
           </ul>
-          <a href="#contacts" class="button">
+          <a href="#contacts" class="button mt-auto">
             Записаться
           </a>
         </div>
