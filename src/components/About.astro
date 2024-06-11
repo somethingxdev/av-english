@@ -25,10 +25,10 @@ const aboutItems = [
 ];
 ---
 
-<section class="bg-[#F4F8F9] py-10 md:py-20 scroll-mt-10" id="about">
+<section class="bg-[#F4F8F9] py-10 md:py-20 scroll-mt-10 overflow-hidden" id="about">
   <div class="container flex flex-col lg:flex-row justify-between gap-5 lg:gap-10">
     <h2 class="section-title lg:mb-10 shrink-0">О СЕБЕ</h2>
-    <Slide direction="right" client:visible cascade>
+    <Slide direction="right" client:load>
       <ul class="max-w-[780px]">
         {
           aboutItems.map((item) => (
