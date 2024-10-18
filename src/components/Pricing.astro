@@ -1,54 +1,59 @@
 ---
 const plans = [
-  {
-    title: 'Индивидуальные занятия',
-    duration: 60,
-    price: 3000,
-    count: 8,
-  },
-  {
-    title: 'Занятия в парах',
-    duration: 60,
-    price: 2000,
-    count: 8,
-  },
-  {
-    title: 'Занятия в мини-группах',
-    duration: 60,
-    price: 10000,
-    count: 8,
-  },
+	{
+		title: 'Индивидуальные занятия',
+		duration: 60,
+		price: 3000,
+		count: 8,
+		availability: false,
+	},
+	{
+		title: 'Занятия в парах',
+		duration: 60,
+		price: 2000,
+		count: 8,
+		availability: true,
+	},
+	{
+		title: 'Занятия в мини-группах',
+		duration: 60,
+		price: 10000,
+		count: 8,
+		availability: true,
+	},
 ];
 ---
 
-<section class="container py-10 md:py-20 scroll-mt-10" id="pricing">
-  <h2 class="section-title mb-10 w-max mx-auto">Тарифы</h2>
-  <div class="flex flex-col  md:flex-row gap-5">
-    {
-      plans.map((plan, index) => (
-        <div class="mb-5 w-full border py-5 px-8 flex flex-col">
-          <h3 class="text-center font-semibold mb-5 text-lg">{plan.title}</h3>
-          <ul class="mb-5">
-            <li class="flex-stack gap-5 border-b py-2 mb-3">
-              <span>Длительность</span>
-              <span>{plan.duration} минут</span>
-            </li>
-            <li class="flex-stack gap-5 border-b py-2 mb-3">
-              <span>Стоимость</span>
-              <span>{plan.price} ₽ / {index === 2 ? 'месяц' : 'занятие'} </span>
-            </li>
-            {index === 2 && 
-              <li class="flex-stack gap-5 border-b py-2 mb-3">
-              <span>Количество занятий</span>
-              <span>{plan.count}</span>
-            </li>
-            }
-          </ul>
-          <a href="#contacts" class="button mt-auto">
-            Записаться
-          </a>
-        </div>
-      ))
-    }
-  </div>
+<section class='container py-10 md:py-20 scroll-mt-10' id='pricing'>
+	<h2 class='section-title mb-10 w-max mx-auto'>Тарифы</h2>
+	<div class='flex flex-col md:flex-row gap-5'>
+		{
+			plans.map((plan, index) => (
+				<div class='mb-5 w-full border py-5 px-8 flex flex-col'>
+					<h3 class='text-center font-semibold mb-5 text-lg'>{plan.title}</h3>
+					<ul class='mb-5'>
+						<li class='flex-stack gap-5 border-b py-2 mb-3'>
+							<span>Длительность</span>
+							<span>{plan.duration} минут</span>
+						</li>
+						<li class='flex-stack gap-5 border-b py-2 mb-3'>
+							<span>Стоимость</span>
+							<span>
+								{plan.price} ₽ / {index === 2 ? 'месяц' : 'занятие'}{' '}
+							</span>
+						</li>
+						{index === 2 && (
+							<li class='flex-stack gap-5 border-b py-2 mb-3'>
+								<span>Количество занятий</span>
+								<span>{plan.count}</span>
+							</li>
+						)}
+					</ul>
+					<a href='#contacts' class={`button mt-auto ${plan.availability === false && 'bg-black/50 pointer-events-none'}`}>
+						{plan.availability === false ? 'Места закончились :(' : 'Записаться'}
+					</a>
+				</div>
+			))
+		}
+	</div>
 </section>

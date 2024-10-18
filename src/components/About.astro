@@ -1,46 +1,43 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { Slide } from 'react-awesome-reveal';
 const aboutItems = [
-  {
-    icon: 'learning',
-    text: '<strong>Преподаю английский</strong> для взрослых онлайн с 2018 года. Мои ученики это люди разных возрастов, интересов и профессий. Я обучаю IT-специалистов, бизнесменов, юристов, преподавателей йоги, дизайнеров и всех тех, кто хочет расти, как в языковом плане, так и в личностном',
-  },
-  {
-    icon: 'student',
-    text: '<strong>Мой уровень языка</strong> подтвержден сертификатом Cambridge С1 Advanced, а мои <strong>методологические навыки</strong> - дипломами бакалавра и магистра. Бакалавр Психологии в американском ВУЗе, учеба полностью на английском, включая написание диссертации. Магистр Лингвистики, Теория и Методика Преподавания Иностранных Языков и Культур.',
-  },
-  {
-    icon: 'globe',
-    text: '<strong>Путешествовала</strong> больше чем в 25 странах мира. В студенческие годы работала учителем английского в федеральном ВУЗе <strong>Бразилии</strong>, кассиром на Статуе Свободы в <strong>Нью-Йорке</strong>, а также переводчиком на ряде международных мероприятий',
-  },
-  {
-    icon: 'test',
-    text: '<strong>Изучаю испанский</strong> менее 3 лет, и уже вышла на уровень В2, так что я знаю КАК надо учиться и могу этому научить.',
-  },
-  {
-    icon: 'laptop',
-    text: '<strong>Живу на английском:</strong> все книги и сериалы я читаю в оригинале, все мои гаджеты switched to English, 80% информации Goog’лю на английском, и даже есть собака породы Американский Булли',
-  },
+	{
+		icon: 'learning',
+		text: '<strong>Преподаю английский</strong> для взрослых онлайн с 2018 года. Мои ученики это люди разных возрастов, интересов и профессий. Я обучаю IT-специалистов, бизнесменов, юристов, преподавателей йоги, дизайнеров и всех тех, кто хочет расти, как в языковом плане, так и в личностном',
+	},
+	{
+		icon: 'student',
+		text: '<strong>Мой уровень языка</strong> подтвержден сертификатом Cambridge С1 Advanced, а мои <strong>методологические навыки</strong> - дипломами бакалавра и магистра. Бакалавр Психологии в американском ВУЗе, учеба полностью на английском, включая написание диссертации. Магистр Лингвистики, Теория и Методика Преподавания Иностранных Языков и Культур.',
+	},
+	{
+		icon: 'globe',
+		text: '<strong>Путешествовала</strong> больше чем в 25 странах мира. В студенческие годы работала учителем английского в федеральном ВУЗе <strong>Бразилии</strong>, кассиром на Статуе Свободы в <strong>Нью-Йорке</strong>, а также переводчиком на ряде международных мероприятий',
+	},
+	{
+		icon: 'test',
+		text: '<strong>Изучаю испанский</strong> менее 3 лет, и уже вышла на уровень В2, так что я знаю КАК надо учиться и могу этому научить.',
+	},
+	{
+		icon: 'laptop',
+		text: '<strong>Живу на английском:</strong> все книги и сериалы я читаю в оригинале, все мои гаджеты switched to English, 80% информации Goog’лю на английском, и даже есть собака породы Американский Булли',
+	},
 ];
 ---
 
-<section class="bg-[#F4F8F9] py-10 md:py-20 scroll-mt-10 overflow-hidden" id="about">
-  <div class="container flex flex-col lg:flex-row justify-between gap-5 lg:gap-10">
-    <h2 class="section-title lg:mb-10 shrink-0">О СЕБЕ</h2>
-    <Slide direction="right" client:load>
-      <ul class="max-w-[780px]">
-        {
-          aboutItems.map((item) => (
-            <li class="flex flex-col md:flex-row gap-2 md:gap-5 items-start mb-10 last:mb-0">
-              <Icon name={item.icon} class="shrink-0" size={55} />
-              <p class="lg:text-lg">
-                <Fragment set:html={item.text} />
-              </p>
-            </li>
-          ))
-        }
-      </ul>
-    </Slide>
-  </div>
+<section class='bg-[#F4F8F9] py-10 md:py-20 scroll-mt-10 overflow-hidden' id='about'>
+	<div class='container flex flex-col lg:flex-row justify-between gap-5 lg:gap-10'>
+		<h2 class='section-title lg:mb-10 shrink-0'>О СЕБЕ</h2>
+		<ul class='max-w-[780px]'>
+			{
+				aboutItems.map(item => (
+					<li class='flex flex-col md:flex-row gap-2 md:gap-5 items-start mb-10 last:mb-0'>
+						<Icon name={item.icon} class='shrink-0' size={55} />
+						<p class='lg:text-lg'>
+							<Fragment set:html={item.text} />
+						</p>
+					</li>
+				))
+			}
+		</ul>
+	</div>
 </section>
